@@ -25,6 +25,9 @@
 <body>
 <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
 <div class="body-wrapper">
+
+
+<!--                                                                    C U T T E D                                  -->
   <nav class="navbar navbar-default default">
     <div class="container">
       <div class="navbar-header">
@@ -121,6 +124,12 @@
   </nav>
   <!-- /.navbar -->
 
+
+
+  <!--                                          C U T T E D                                     -->
+
+
+
   <div class="tp-fullscreen-container revolution">
     <div class="tp-fullscreen">
       <ul>
@@ -146,6 +155,13 @@
     <!-- /.tp-fullscreen-container -->
   </div>
   <!-- /.revolution -->
+
+  <!--                                          C U T T E D                                     -->
+
+
+
+
+
 
   <div class="light-wrapper">
     <div class="container inner">
@@ -222,6 +238,10 @@
   </div>
   <!-- /.light-wrapper -->
 
+
+    <!--                                          C U T T E D                                     -->
+
+
   <div class="inverse-wrapper inner bp0">
     <div class="container">
       <div class="thin text-center">
@@ -241,6 +261,10 @@
     <!-- /.container -->
   </div>
   <!-- /.inverse-wrapper -->
+
+
+      <!--                                          C U T T E D                                     -->
+
 
   <div class="light-wrapper">
     <div class="container inner">
@@ -343,6 +367,9 @@
   </div>
   <!-- /.light-wrapper -->
 
+      <!--                                          C U T T E D                                     -->
+
+
 
 
   <div class="outer-wrap inverse-wrapper">
@@ -362,6 +389,11 @@
     <!-- /.video-wrap -->
   </div>
   <!-- /.inverse-wrapper -->
+
+
+        <!--                                          C U T T E D                                     -->
+
+
 
   <div class="light-wrapper">
     <div class="container inner">
@@ -482,6 +514,11 @@
   </div>
   <!-- /.light-wrapper -->
 
+
+          <!--                                          C U T T E D                                     -->
+
+
+
   <div class="white-wrapper">
     <div class="col-image">
       <div class="bg-wrapper col-md-6">
@@ -535,6 +572,10 @@
   </div>
   <!-- /.white-wrapper -->
 
+
+<!--                                     C U T T E D     -->
+
+
   <div class="light-wrapper">
     <div class="container inner">
       <div class="section-title text-center">
@@ -577,6 +618,11 @@
     <!--/.container -->
   </div>
   <!-- /.light-wrapper -->
+
+
+  <!--                                     C U T T E D     -->
+
+
 
   <div class="light-wrapper">
     <div class="container inner">
@@ -639,6 +685,11 @@
   </div>
   <!-- /.light-wrapper -->
 
+
+
+
+
+  
   <footer class="inverse-wrapper">
     <div class="container inner">
       <div class="row">
