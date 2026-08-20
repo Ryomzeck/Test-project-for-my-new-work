@@ -23,14 +23,14 @@
 <![endif]-->
 </head>
 <body>
-@include('components.preloader')
+@include('components.Default.preloader')
 <div class="body-wrapper">
 
-@include('components.navbar')
+@include('components.Default.navbar')
 
 @yield('content')
 
-@include('components.footer')
+@include('components.Default.footer')
 
 
   <div id="share-bar"></div>

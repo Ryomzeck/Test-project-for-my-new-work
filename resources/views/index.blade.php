@@ -2,22 +2,22 @@
 
 @section('content')
 
-   @include('components.fullscreenContainer')
+   @include('components.Default.fullscreenContainer')
 
-   @include('components.helloScreen')
+   @include('components.Default.helloScreen')
 
-   @include('components.richLayoutsScreen')
+   @include('components.Default.richLayoutsScreen')
 
-   @include('components.productGallery')
+   @include('components.Default.productGallery')
 
-   @include('components.videoParallax')
+   @include('components.Default.videoParallax')
 
-   @include('components.timelineBlog')
+   @include('components.Default.timelineBlog')
 
-   @include('components.aboutCompany')
+   @include('components.Default.aboutCompany')
 
-   @include('components.processModel')
+   @include('components.Default.processModel')
 
-   @include('components.teamGallery')
+   @include('components.Default.teamGallery')
 
 @endsection
