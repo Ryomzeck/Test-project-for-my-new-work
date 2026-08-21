@@ -4,22 +4,20 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('auth.login');
-});
-
-Route::get('/apps_scrumboard', function () {
     return view('apps_scrumboard');
-})->middleware(['auth', 'verified'])->name('apps_scrumboard');
+})->middleware('auth')->name('apps_scrumboard');
+
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->middleware(['auth', 'verified'])->name('auth.login');
 
 Route::get('/register', function () {
     return view('auth.register');
 }) ->name('register');
 
-Route::get('/registerSuccess', function () {
-    return view('auth.registerSuccess');
-}) ->name('registerSuccess');
 
-Route::get('/index', function () {
+ Route::get('/index', function () {
     return view('index');
 }) ->name('index');
 
