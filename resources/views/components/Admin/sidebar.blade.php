@@ -507,7 +507,7 @@
                                 <a href="auth_pass_recovery_boxed.html" target="_blank"> Recover ID Boxed </a>
                             </li>
                             <li>
-                                <a href="auth_login.html" target="_blank"> Login Cover </a>
+                                <a href="{{ route('login') }}"> Login Cover </a>
                             </li>
                             <li>
                                 <a href="auth_register.html" target="_blank"> Register Cover </a>

@@ -7,13 +7,21 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/apps_scrumboard', function () {
+    return view('apps_scrumboard');
+})->middleware(['auth', 'verified'])->name('apps_scrumboard');
 
 Route::get('/register', function () {
     return view('auth.register');
-});
+}) ->name('register');
+
+Route::get('/registerSuccess', function () {
+    return view('auth.registerSuccess');
+}) ->name('registerSuccess');
+
+Route::get('/index', function () {
+    return view('index');
+}) ->name('index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
