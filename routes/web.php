@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Slide;
 
 Route::get('/', function () {
     return view('apps_scrumboard');
@@ -16,10 +18,24 @@ Route::get('/register', function () {
     return view('auth.register');
 }) ->name('register');
 
+Route::get('/index', function () {
+    $slides = Slide::all();
 
- Route::get('/index', function () {
-    return view('index');
-}) ->name('index');
+    return view('index', compact('slides'));
+})->name('index');
+
+
+
+ Route::get('/sliderRedactorPage', function () {
+    return view('sliderRedactorPage');
+}) ->name('sliderRedactorPage');
+
+# Route::get('/slides', [SliderController::class, 'getAllSlides']);
+
+
+Route::post('/slides', [SliderController::class, 'store'])
+    ->name('slides.store');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -167,8 +167,8 @@
                             <div class="media mx-auto">
                                 <img src="assets/img/90x90.jpg" class="img-fluid mr-2" alt="avatar">
                                 <div class="media-body">
-                                    <h5>Xavier</h5>
-                                    <p>Project Leader</p>
+                                    <h5>{{ auth()->user()->name }}</h5>
+                                    <p>Admin</p>
                                 </div>
                             </div>
                         </div>
