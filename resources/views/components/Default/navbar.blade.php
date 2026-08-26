@@ -13,7 +13,7 @@
         <ul class="nav navbar-nav">
           <li class="current dropdown"><a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">Home <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="index.html">Home Layout 1</a></li>
+              <li><a href="{{ route('index') }}">Home Layout 1</a></li>
               <li><a href="index2.html">Home Layout 2</a></li>
               <li><a href="index3.html">Home Layout 3</a></li>
               <li><a href="index4.html">Home Layout 4</a></li>

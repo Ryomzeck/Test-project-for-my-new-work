@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,6 +25,14 @@ Route::get('/register', function () {
  Route::get('/sliderRedactorPage', function () {
     return view('sliderRedactorPage');
 }) ->name('sliderRedactorPage');
+
+# Route::get('/slides', [SliderController::class, 'getAllSlides']);
+
+
+Route::post('/slides', [SliderController::class, 'store'])
+    ->name('slides.store');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

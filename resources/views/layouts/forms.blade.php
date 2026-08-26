@@ -90,8 +90,6 @@
     <script>
         //First upload
         var firstUpload = new FileUploadWithPreview('myFirstImage')
-        //Second upload
-        var secondUpload = new FileUploadWithPreview('mySecondImage')
     </script>
     <!-- END PAGE LEVEL PLUGINS -->
 </body>
