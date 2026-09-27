@@ -58,6 +58,8 @@ public function update(Request $request, Slide $slide)
 
 public function destroy(Slide $slide)
 {
+    Storage::disk('public')->delete($slide->image);
+
     $slide->delete();
 
     return redirect()->route('sliderRedactorPage');
