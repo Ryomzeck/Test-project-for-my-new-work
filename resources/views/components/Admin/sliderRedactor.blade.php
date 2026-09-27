@@ -60,15 +60,74 @@
                                     type="text">
 
                                 </div>
+                        <button type="submit" class="btn btn-primary">Create slide</button>
                             </div>
+                            </form>
+<br><br>@foreach ($slides as $slide)
+             <div class="border rounded p-3 mb-4">
+            <form method="POST" action="/slides/{{ $slide->id }}">
+        @csrf
+        @method('PUT')
+            <p>
+                <label>Слайд № :</label>
+
+                <input
+                    type="number"
+                    name="sort_order"
+                    value="{{ $slide->sort_order }}">
+                    <br>
+            <label>Заголовок:</label>
+
+            <input
+                type="text"
+                name="title"
+                value="{{ $slide->title }}">
+
+            <br>
+
+            <label>Описание:</label>
+
+            <input
+                type="text"
+                name="description"
+                value="{{ $slide->description }}">
+
+<br>
+                <br>
+            </p>
+
+    <img
+        src="{{ asset('storage/' . $slide->image) }}"
+        width="300">
+
+    <br><br>
+
+            <button type="submit">
+            Сохранить
+        </button>
+
+        <br><br>
+
+        </form>
+        <form method="POST"
+            action="{{ route('slides.destroy', $slide) }}"
+            onsubmit="return confirm('Удалить этот слайд?')">
+
+            @csrf
+            @method('DELETE')
+
+            <button type="submit">Удалить</button>
+
+        </form>
+        <br>
+            </div>
+@endforeach
                 </div>
                 <br>
                 <br>
-                                        <button type="submit" class="btn btn-primary">Load image</button>
                 <br>
                 <br>
 
-                            </form>
 
                                     </div>
                                 </div>

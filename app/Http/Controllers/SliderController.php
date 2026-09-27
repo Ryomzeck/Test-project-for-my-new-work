@@ -10,7 +10,7 @@ class SliderController extends Controller
 {
     public function getAllSlides()
     {
-        $slides = Slide::all();
+        $slides = Slide::orderBy('sort_order')->get();
 
         return $slides;
     }
@@ -43,5 +43,29 @@ public function store(SliderRequest $request)
     $slide->save();
 
     return redirect()->route('sliderRedactorPage');
+}
+
+public function update(Request $request, Slide $slide)
+{
+    $slide->sort_order = $request->sort_order;
+    $slide->title = $request->title;
+    $slide->description = $request->description;
+
+    $slide->save();
+
+    return redirect()->route('sliderRedactorPage');
+}
+
+public function destroy(Slide $slide)
+{
+    $slide->delete();
+
+    return redirect()->route('sliderRedactorPage');
+}
+public function redactor()
+{
+    $slides = Slide::orderBy('sort_order')->get();
+
+    return view('sliderRedactorPage', compact('slides'));
 }
 }
