@@ -27,9 +27,8 @@ Route::get('/index', function () {
 })->name('index');
 
 
-Route::get('/galleryPage', function () {
-    return view('galleryPage');
-})->name('galleryPage');
+Route::get('/galleryPage', [PhotoController::class, 'gallery'])
+    ->name('galleryPage');
 
 Route::get('/galleryRedactorPage', function () {
     return view('galleryRedactorPage');
@@ -54,12 +53,23 @@ Route::delete('/slides/{slide}', [SliderController::class, 'destroy'])
 Route::post('/slides', [SliderController::class, 'store'])
     ->name('slides.store');
 
-    Route::post('/photos', [SliderController::class, 'store'])
+
+
+    Route::get('/galleryRedactorPage', [PhotoController::class, 'redactor'])
+    ->name('galleryRedactorPage');
+
+    Route::post('/photos', [PhotoController::class, 'store'])
     ->name('photos.store');
 
-    Route::delete('/photos/{photo}', [PhotoController::class, 'destroy'])
-    ->name('slides.destroy');
+    Route::put('/photos/{photo}', [PhotoController::class, 'update'])
+    ->name('photos.update');
 
+    Route::delete('/photos/{photo}', [PhotoController::class, 'destroy'])
+    ->name('photos.destroy');
+
+    Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])
+    ->name('categories.destroy');
+    
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

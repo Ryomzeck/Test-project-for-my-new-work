@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Photo extends Model
 {
@@ -10,4 +11,8 @@ class Photo extends Model
         'image',
         'title',
     ];
+    public function categories(): BelongsToMany
+{
+    return $this->belongsToMany(Category::class);
+}
 }

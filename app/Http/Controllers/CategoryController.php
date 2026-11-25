@@ -17,4 +17,15 @@ class CategoryController extends Controller
 
         return redirect()->back()->with('success', 'Категория успешно создана!');
     }
+
+    public function destroy(Category $category)
+{
+    // Удаляем связи категории с фотографиями
+    $category->photos()->detach();
+
+    // Удаляем саму категорию
+    $category->delete();
+
+    return redirect()->back();
+}
 }
