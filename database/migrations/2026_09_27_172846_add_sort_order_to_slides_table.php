@@ -11,9 +11,11 @@ return new class extends Migration
      */
 public function up(): void
 {
-    Schema::table('slides', function (Blueprint $table) {
-        $table->integer('sort_order')->default(0);
-    });
+    if (!Schema::hasColumn('slides', 'sort_order')) {
+        Schema::table('slides', function (Blueprint $table) {
+            $table->integer('sort_order')->default(0);
+        });
+    }
 }
 
     /**

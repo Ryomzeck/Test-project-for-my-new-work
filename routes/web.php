@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Slide;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PhotoController;
 
 Route::get('/', function () {
     return view('apps_scrumboard');
@@ -25,6 +27,15 @@ Route::get('/index', function () {
 })->name('index');
 
 
+Route::get('/galleryPage', function () {
+    return view('galleryPage');
+})->name('galleryPage');
+
+Route::get('/galleryRedactorPage', function () {
+    return view('galleryRedactorPage');
+})->name('galleryRedactorPage');
+
+
 
 //  Route::get('/sliderRedactorPage', function () {
 //     return view('sliderRedactorPage');
@@ -43,6 +54,11 @@ Route::delete('/slides/{slide}', [SliderController::class, 'destroy'])
 Route::post('/slides', [SliderController::class, 'store'])
     ->name('slides.store');
 
+    Route::post('/photos', [SliderController::class, 'store'])
+    ->name('photos.store');
+
+    Route::delete('/photos/{photo}', [PhotoController::class, 'destroy'])
+    ->name('slides.destroy');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -50,4 +66,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
 require __DIR__.'/auth.php';
